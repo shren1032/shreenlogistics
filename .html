@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreen Logistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background: #575757;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #tracking-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        #tracking-section input {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        #tracking-section button {
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #tracking-section button:hover {
+            background-color: #00264d;
+        }
+        #tracking-result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Shreen Logistics</h1>
+        <p>Your trusted partner in transportation and logistics</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#tracking">Track Package</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <section id="home">
+        <h2>Home</h2>
+        <p>Shreen Logistics offers top-notch logistics and transportation services, ensuring timely and safe delivery of your goods.</p>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Shreen Logistics, we are dedicated to delivering reliable and efficient logistics solutions. Our mission is to simplify transportation for businesses of all sizes.</p>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Freight Transportation</li>
+            <li>Warehousing Solutions</li>
+            <li>Express Delivery</li>
+            <li>Supply Chain Management</li>
+        </ul>
+    </section>
+    <section id="tracking">
+        <h2>Track Your Package</h2>
+        <div id="tracking-section">
+            <input type="text" id="trackingNumber" placeholder="Enter your tracking number">
+            <button onclick="trackPackage()">Track</button>
+        </div>
+        <div id="tracking-result"></div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: +91 12345 67890</p>
+        <p>Email: contact@shreenlogistics.com</p>
+        <p>Address: 123 Logistics Street, Your City, India</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Shreen Logistics. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function trackPackage() {
+            const trackingNumber = document.getElementById('trackingNumber').value;
+            const resultDiv = document.getElementById('tracking-result');
+
+            if (!trackingNumber) {
+                resultDiv.style.display = 'block';
+                resultDiv.style.color = 'red';
+                resultDiv.textContent = 'Please enter a tracking number.';
+                return;
+            }
+
+            // Simulate tracking result (in real scenario, this will call a server API)
+            const dummyTrackingData = {
+                '1234567890': 'Your package is in transit.',
+                '0987654321': 'Your package has been delivered.',
+            };
+
+            const result = dummyTrackingData[trackingNumber] || 'Tracking number not found.';
+            resultDiv.style.display = 'block';
+            resultDiv.style.color = 'black';
+            resultDiv.textContent = result;
+        }
+    </script>
+</body>
+</html>
